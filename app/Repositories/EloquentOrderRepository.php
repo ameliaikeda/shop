@@ -19,8 +19,7 @@ class EloquentOrderRepository implements OrderRepository {
 	/**
 	 * Inject the eloquent model for orders and the authenticator for the current user.
 	 *
-	 * @param \App\Order                       $order
-	 * @param \Illuminate\Contracts\Auth\Guard $guard
+	 * @param \Illuminate\Contracts\Auth\Guard $auth
 	 */
 	public function __construct(Authenticator $auth) {
 		$this->customer = $auth->user();
@@ -39,7 +38,7 @@ class EloquentOrderRepository implements OrderRepository {
 	/**
 	 * Add an order to the repository
 	 *
-	 * @param \App\Contracts\Order $order
+	 * @param \Amelia\Shop\Contracts\Order $order
 	 * @return mixed
 	 */
 	public function add(Order $order) {
@@ -49,7 +48,7 @@ class EloquentOrderRepository implements OrderRepository {
 	/**
 	 * Cancel an order.
 	 *
-	 * @param \App\Contracts\Order $order
+	 * @param \Amelia\Shop\Contracts\Order $order
 	 * @return mixed
 	 */
 	public function cancel(Order $order) {

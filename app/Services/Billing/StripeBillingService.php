@@ -16,7 +16,7 @@ class StripeBillingService implements BillingService {
 	/**
 	 * Initialize with a tax service and the current user.
 	 *
-	 * @param \App\Services\Billing\TaxService        $taxService
+	 * @param \Amelia\Shop\Services\Billing\TaxService        $taxService
 	 * @param \Illuminate\Contracts\Config\Repository $config
 	 */
 	public function __construct(TaxService $taxService, Repository $config) {

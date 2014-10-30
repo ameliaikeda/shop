@@ -14,7 +14,7 @@ interface OrderRepository {
 	/**
 	 * Add an order to the repository
 	 *
-	 * @param \App\Contracts\Order $order
+	 * @param \Amelia\Shop\Contracts\Order $order
 	 * @return mixed
 	 */
 	public function add(Order $order);
@@ -22,7 +22,7 @@ interface OrderRepository {
 	/**
 	 * Cancel an order.
 	 *
-	 * @param \App\Contracts\Order $order
+	 * @param \Amelia\Shop\Contracts\Order $order
 	 * @return mixed
 	 */
 	public function cancel(Order $order);
