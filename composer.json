@@ -1,0 +1,27 @@
+{
+    "name": "amelia/shop",
+    "description": "Shop package for Laravel 5",
+    "authors": [
+        {
+            "name": "Amelia Ikeda",
+            "email": "amelia@amelia.pw"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "laravel/framework": "5.*"
+    },
+    "require-dev": {
+        "way/generators": "~3.0",
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "classmap": [
+            "migrations"
+        ],
+        "psr-4": {
+            "Amelia\\Shop\\": "app/"
+        }
+    },
+    "minimum-stability": "dev"
+}
