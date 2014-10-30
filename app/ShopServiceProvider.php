@@ -1,4 +1,4 @@
-<?php namespace Amelia\Shop\Providers;
+<?php namespace Amelia\Shop;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -29,7 +29,7 @@ class ShopServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->package("amelia/shop");
+		$this->package("amelia/shop", "shop", __DIR__ . "/../");
 	}
 
 	/**
