@@ -1,6 +1,7 @@
 {
     "name": "amelia/shop",
     "description": "Shop package for Laravel 5",
+    "license": "MIT",
     "authors": [
         {
             "name": "Amelia Ikeda",
