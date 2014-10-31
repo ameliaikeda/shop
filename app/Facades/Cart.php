@@ -1,6 +1,6 @@
 <?php namespace Amelia\Shop\Facades;
 
-use Illuminate\Support\Facades;
+use Illuminate\Support\Facades\Facade;
 
 class Cart extends Facade {
 
@@ -9,7 +9,7 @@ class Cart extends Facade {
 	 *
 	 * @return string
 	 */
-	public function getFacadeAccessor() {
+	protected static function getFacadeAccessor() {
 		return "cart";
 	}
 }
