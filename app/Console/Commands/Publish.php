@@ -63,20 +63,56 @@ class Publish extends Command {
 		return $this->question("What should I call your shop?");
 	}
 
+	/**
+	 * Publish our config to laravel
+	 */
 	protected function publishConfig() {
 		$this->call("config:publish", ["package" => $this->package]);
 	}
 
+	/**
+	 * Publish shop views to laravel
+	 */
 	protected function publishViews() {
 		$this->call("view:publish", ["package" => $this->package]);
 	}
 
+	/**
+	 * Publish assets to the installation of laravel
+	 */
 	protected function publishAssets() {
 		$this->call("asset:publish", ["package" => $this->package]);
 	}
 
+	/**
+	 * Publish controllers by setting routing to true
+	 *
+	 * @param \Illuminate\Contracts\Config\Repository $config
+	 */
 	protected function publishControllers(Repository $config) {
 		$config->set("shop::shop.routing", true);
+	}
+
+	/**
+	 * Command-line options
+	 *
+	 * @return array
+	 */
+	public function getOptions() {
+		return [
+			["controllers", "c", InputOption::VALUE_OPTIONAL, "Add controller routing?", null],
+		];
+	}
+
+	/**
+	 * Command-line arguments
+	 *
+	 * @return array
+	 */
+	public function getArguments() {
+		return [
+			["name", InputArgument::OPTIONAL, "Shop name", false],
+		];
 	}
 
 }
