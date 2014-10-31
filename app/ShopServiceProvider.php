@@ -30,6 +30,12 @@ class ShopServiceProvider extends ServiceProvider {
 	 */
 	public function boot() {
 		$this->package("amelia/shop", "shop", __DIR__ . "/../");
+		$this->bootControllers();
+	}
+
+	protected function bootControllers() {
+		if ($this->app->make("config")->get("shop::shop.routing", false))
+			include __DIR__ . "/app/Http/routes.php";
 	}
 
 	/**
