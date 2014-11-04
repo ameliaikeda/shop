@@ -4,6 +4,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Session\Store;
 use Amelia\Shop\Product;
 use Illuminate\Support\Collection;
+use Amelia\Shop\Exceptions\CartException;
 
 class SessionCartService implements CartService {
 
@@ -88,6 +89,12 @@ class SessionCartService implements CartService {
 		return $row;
 	}
 
+	/**
+	 * Insert a new product to the session
+	 *
+	 * @param       $id
+	 * @param array $options
+	 */
 	protected function insert($id, array $options) {
 		$row = $this->generate($id, $options);
 		$this->cart->put($row, $this->format($id, $options));
@@ -111,7 +118,7 @@ class SessionCartService implements CartService {
 	 * @param $row
 	 * @return bool success
 	 *
-	 * @throws \App\Services\Cart\CartException
+	 * @throws \Amelia\Shop\Exceptions\CartException
 	 */
 	public function increment($row) {
 		$this->quantity($row, 1);
@@ -131,10 +138,10 @@ class SessionCartService implements CartService {
 	 * Change quantity of a row by a given amount
 	 *
 	 * @param string $row
-	 * @param int    $quantity the amount to change by
+	 * @param int    $quantity
 	 * @return bool
 	 *
-	 * @throws \App\Services\Cart\CartException
+	 * @throws \Amelia\Shop\Exceptions\CartException
 	 */
 	public function quantity($row, $quantity) {
 		if (!$item = $this->cart->get($row)) {
@@ -174,7 +181,7 @@ class SessionCartService implements CartService {
 	 * Save the current cart.
 	 */
 	protected function save() {
-		$this->session->put($this->key, serialize($this->cart->items()));
+		$this->session->put($this->key, $this->cart->items());
 	}
 
 	/**

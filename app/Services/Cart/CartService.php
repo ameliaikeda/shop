@@ -45,7 +45,7 @@ interface CartService {
 	 * @param int    $quantity the amount to change by
 	 * @return void
 	 *
-	 * @throws \App\Services\Cart\CartException
+	 * @throws \Amelia\Shop\Exceptions\CartException
 	 */
 	public function quantity($row, $quantity);
 

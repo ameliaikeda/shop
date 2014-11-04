@@ -1,4 +1,4 @@
-<?php namespace Amelia\Shop\Services\Billing;
+<?php namespace Amelia\Shop\Services\Billing\Tax;
 
 class NaiveTaxService implements TaxService {
 
