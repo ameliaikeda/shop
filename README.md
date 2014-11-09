@@ -6,7 +6,7 @@ An online store implementation as a package; made for Laravel 5 (but usable else
 
 Open your app.php config file and add `'Amelia\Shop\ShopServiceProvider'` to your `providers` array.
 
-*(Optional): add `'Cart' => 'Amelia\Shop\Facades\Cart'` to your facades to use `Cart::add()`, etc.
+*(Optional): add `'Cart' => 'Amelia\Shop\Facades\Cart'` to your facades to use `Cart::add()`, etc.*
 
 Publish everything in the package by running `php artisan shop:publish "My Store Name"`. You can change this with `php artisan shop:rename "New Name"`.
 
