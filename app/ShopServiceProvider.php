@@ -35,7 +35,7 @@ class ShopServiceProvider extends ServiceProvider {
 
 	protected function bootControllers() {
 		if ($this->app->make("config")->get("shop::shop.routing", false))
-			include __DIR__ . "/app/Http/routes.php";
+			include __DIR__ . "/Http/routes.php";
 	}
 
 	/**
