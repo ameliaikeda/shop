@@ -18,10 +18,11 @@
     },
     "autoload": {
         "classmap": [
-            "migrations"
+            "src/migrations"
         ],
         "psr-4": {
-            "Amelia\\Shop\\": "app/"
+            "Amelia\\Shop\\": "src/app/",
+            "Amelia\\Shop\\Tests": "tests/functional/"
         }
     },
     "minimum-stability": "dev"
