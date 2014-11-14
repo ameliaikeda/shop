@@ -16,7 +16,7 @@ class AddOptionsMutationToProductsTable extends Migration {
 		{
 			$table->dropColumn('options');
 			$table->integer('options_id')->unsigned();
-			$table->string('options_type', 190);
+			$table->string('options_type');
 		});
 	}
 

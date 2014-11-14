@@ -1,5 +1,6 @@
 <?php namespace Amelia\Shop;
 
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
 class ShopServiceProvider extends ServiceProvider {
@@ -29,7 +30,7 @@ class ShopServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		$this->package("amelia/shop", "shop", __DIR__ . "/../");
+		$this->package("amelia/shop");
 		$this->bootControllers();
 	}
 
@@ -72,7 +73,7 @@ class ShopServiceProvider extends ServiceProvider {
 		$this->app->bind("Amelia\\Shop\\Services\\Cart\\CartService", "Amelia\\Shop\\Services\\Cart\\SessionCartService");
 
 		// bind facade endpoints
-		$this->app->bind("cart", function ($app) {
+		$this->app->bind("cart", function (Application $app) {
 			return $app->make("Amelia\\Shop\\Services\\Cart\\CartService");
 		});
 	}

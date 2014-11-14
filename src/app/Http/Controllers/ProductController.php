@@ -8,8 +8,6 @@ use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Routing\Controller;
 
 /**
- * Class ProductController
- *
  * @package amelia/shop
  * @resource("products")
  */
